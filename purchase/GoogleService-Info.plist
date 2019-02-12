@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>774458950064-5iqu528h0k3u55v0jgkp7ligt6d7itfe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.774458950064-5iqu528h0k3u55v0jgkp7ligt6d7itfe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD_0saPPiXHIHHuSrFSD_dGTqwdJsBtpFs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>774458950064</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>iryoi-icloud.com.Purchase</string>
+	<key>PROJECT_ID</key>
+	<string>syoukai-2f87c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>syoukai-2f87c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:774458950064:ios:8c16f727fdbbd48b</string>
+	<key>DATABASE_URL</key>
+	<string>https://syoukai-2f87c.firebaseio.com</string>
+</dict>
+</plist>
