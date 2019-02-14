@@ -136,6 +136,7 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             alert.addAction(cancelAction)
             alert.addAction(defaultAction)
             
+            //
             //Alertを表示
             present(alert, animated: true, completion: nil)
             
