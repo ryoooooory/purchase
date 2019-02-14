@@ -15,11 +15,11 @@
 		1E1D837E2204A6F600BF43ED /* purchaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D837D2204A6F600BF43ED /* purchaseTests.swift */; };
 		1E1D83892204A6F600BF43ED /* purchaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1D83882204A6F600BF43ED /* purchaseUITests.swift */; };
 		1E7274A1220D83B7006EB872 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E7274A0220D83B7006EB872 /* GoogleService-Info.plist */; };
-		1E7274A4220D86AE006EB872 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7274A3220D86AE006EB872 /* CameraController.swift */; };
-		1E7274A6220D8719006EB872 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7274A5220D8718006EB872 /* ViewController.swift */; };
 		1E7274A8220D8741006EB872 /* RecoderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7274A7220D8741006EB872 /* RecoderController.swift */; };
 		1EC439E32213F8AC006B5FF4 /* ListviewcController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC439E22213F8AC006B5FF4 /* ListviewcController.swift */; };
 		1EC439E5221401B2006B5FF4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC439E4221401B2006B5FF4 /* Item.swift */; };
+		1EFBC2C92215381000124B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFBC2C82215381000124B60 /* ViewController.swift */; };
+		1EFBC2CB2215387200124B60 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFBC2CA2215387200124B60 /* CameraController.swift */; };
 		48E16784D771405E8461AF71 /* Pods_purchase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE847183868CB7D978ECC06 /* Pods_purchase.framework */; };
 		6A6002773A3EBB0609B8F006 /* Pods_purchaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82143784B16941010A31B2D2 /* Pods_purchaseTests.framework */; };
 /* End PBXBuildFile section */
@@ -56,11 +56,11 @@
 		1E1D83882204A6F600BF43ED /* purchaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = purchaseUITests.swift; sourceTree = "<group>"; };
 		1E1D838A2204A6F600BF43ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E7274A0220D83B7006EB872 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1E7274A3220D86AE006EB872 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraController.swift; path = /Users/oshimaryo/Documents/purchase/purchase/CameraController.swift; sourceTree = "<absolute>"; };
-		1E7274A5220D8718006EB872 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../test/test/ViewController.swift; sourceTree = "<group>"; };
 		1E7274A7220D8741006EB872 /* RecoderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoderController.swift; sourceTree = "<group>"; };
 		1EC439E22213F8AC006B5FF4 /* ListviewcController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListviewcController.swift; sourceTree = "<group>"; };
 		1EC439E4221401B2006B5FF4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1EFBC2C82215381000124B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = /Users/oshimaryo/Documents/purchase/purchase/ViewController.swift; sourceTree = "<absolute>"; };
+		1EFBC2CA2215387200124B60 /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		3AE847183868CB7D978ECC06 /* Pods_purchase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_purchase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		552171EF5382BAE5A7B682B6 /* Pods_purchaseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_purchaseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69DEA3E9AD636EE67B0FC9A1 /* Pods-purchaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-purchaseUITests.release.xcconfig"; path = "Target Support Files/Pods-purchaseUITests/Pods-purchaseUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 			children = (
 				1E1D83682204A6F500BF43ED /* AppDelegate.swift */,
 				1E1D836C2204A6F500BF43ED /* Main.storyboard */,
-				1E7274A5220D8718006EB872 /* ViewController.swift */,
-				1E7274A3220D86AE006EB872 /* CameraController.swift */,
+				1EFBC2C82215381000124B60 /* ViewController.swift */,
+				1EFBC2CA2215387200124B60 /* CameraController.swift */,
 				1E7274A7220D8741006EB872 /* RecoderController.swift */,
 				1EC439E22213F8AC006B5FF4 /* ListviewcController.swift */,
 				1EC439E4221401B2006B5FF4 /* Item.swift */,
@@ -411,10 +411,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E7274A6220D8719006EB872 /* ViewController.swift in Sources */,
+				1EFBC2C92215381000124B60 /* ViewController.swift in Sources */,
 				1E1D83692204A6F500BF43ED /* AppDelegate.swift in Sources */,
+				1EFBC2CB2215387200124B60 /* CameraController.swift in Sources */,
 				1EC439E32213F8AC006B5FF4 /* ListviewcController.swift in Sources */,
-				1E7274A4220D86AE006EB872 /* CameraController.swift in Sources */,
 				1EC439E5221401B2006B5FF4 /* Item.swift in Sources */,
 				1E7274A8220D8741006EB872 /* RecoderController.swift in Sources */,
 			);

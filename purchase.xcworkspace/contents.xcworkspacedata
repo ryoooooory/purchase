@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/oshimaryo/Documents/purchase/purchase/CameraController.swift">
-   </FileRef>
-   <FileRef
       location = "group:purchase.xcodeproj">
    </FileRef>
    <FileRef
