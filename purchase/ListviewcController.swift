@@ -20,7 +20,7 @@ class ListviewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("List")
-        makeList()
+//        makeList()
     }
     //表示するセルの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,29 +35,29 @@ class ListviewController: UITableViewController{
     }
     
     //情報表示
-    func makeList(){
-        self.items = []
-        var counter = 0
-        ref = Database.database().reference()
-        var x = ""
-        
-        
-        //情報取得
-        ref.child("user").observeSingleEvent(of: .value, with:{(snapshot) in x = ((snapshot.value! as AnyObject).description)!
-            
-            var data: Data =  x.data(using: String.Encoding.utf8)!          //json形式
-            
-            let jsonData = try JSONSerialization.data(withJSONObject: x)
-            let jsonStr = String(bytes: x, encoding: .utf8)!
-
-            print("json  \(jsonStr)")
-            
-            
-            counter += 1
-        })
-        
-        cellnum = counter
-        
-    }
+//    func makeList(){
+//        self.items = []
+//        var counter = 0
+//        ref = Database.database().reference()
+//        var x = ""
+//
+//
+//        //情報取得
+//        ref.child("user").observeSingleEvent(of: .value, with:{(snapshot) in x = ((snapshot.value! as AnyObject).description)!
+//
+//            var data: Data =  x.data(using: String.Encoding.utf8)!          //json形式
+//
+//            let jsonData = try JSONSerialization.data(withJSONObject: x)
+//            let jsonStr = String(bytes: x, encoding: .utf8)!
+//
+//            print("json  \(jsonStr)")
+//
+//
+//            counter += 1
+//        })
+//
+//        cellnum = counter
+//
+//    }
     
 }

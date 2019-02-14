@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="46"/>
                                 <state key="normal" title="購入履歴"/>
                                 <connections>
-                                    <segue destination="8Gs-7P-xbP" kind="showDetail" id="ABt-UA-xFG"/>
+                                    <segue destination="q2v-Ty-Imh" kind="presentation" id="Rwu-lC-Z7f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商会アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-53-7YW">
@@ -146,4 +146,7 @@
             <point key="canvasLocation" x="-666" y="850"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rwu-lC-Z7f"/>
+    </inferredMetricsTieBreakers>
 </document>
