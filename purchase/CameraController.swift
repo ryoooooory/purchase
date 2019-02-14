@@ -20,7 +20,7 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     var captureSession: AVCaptureSession!      //カメラセッション
     var cameraDevices: AVCaptureDevice!           //デバイス
     var imageOutput: AVCaptureStillImageOutput!           //画像のアウトプット
-
+    
     
     
     
@@ -48,7 +48,7 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             Input = nil
         }
         captureSession.addInput(Input)                          //セッションに追加
-
+        
         
         
         
@@ -60,7 +60,7 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         
         
-       
+        
         
         
         
@@ -78,8 +78,8 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         //metaデータを取得する場所を可視化
         let borderView = UIView(frame: CGRect(x: view.frame.size.width * x, y: view.frame.size.height * y, width: view.frame.size.width * width, height: view.frame.size.height * height))
-//        borderView.frame = CGRect(x: view.frame.size.width * x, y: view.frame.size.height * y, width: view.frame.size.width * width, height: view.frame.size.height * height)
-//
+        //        borderView.frame = CGRect(x: view.frame.size.width * x, y: view.frame.size.height * y, width: view.frame.size.width * width, height: view.frame.size.height * height)
+        //
         borderView.layer.borderWidth = 2
         borderView.layer.borderColor = UIColor.red.cgColor
         self.view.addSubview(borderView)
@@ -87,7 +87,7 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         
         
         
-       
+        
         
         //セッション開始
         captureSession.startRunning()
@@ -100,10 +100,10 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         // Dispose of any resources that can be recreated.
     }
     
-   
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         print("camera")
-
+        
         
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
             // バーコードの内容が空かどうかの確認
@@ -113,13 +113,37 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             print(metadata.type)
             print(metadata.stringValue!)
             barcode = metadata.stringValue!
-            changeView()
-            viewDidAppear(false)
-            //RecoderControllerに遷移
+            
+            
+            //ダイアログ表示
+            let alert: UIAlertController = UIAlertController(title: "ノート", message: "購入しますか？", preferredStyle:  UIAlertController.Style.alert)
+            // OKボタン
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+                // ボタンが押された時の処理を書く（クロージャ実装）
+                (action: UIAlertAction!) -> Void in
+                print("Yes")
+                
+                //RecoderControllerに遷移
+                self.changeView()
+            })
+            // キャンセルボタン
+            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+                // ボタンが押された時の処理を書く（クロージャ実装）
+                (action: UIAlertAction!) -> Void in
+                print("No")
+            })
+            // UIAlertControllerにActionを追加
+            alert.addAction(cancelAction)
+            alert.addAction(defaultAction)
+            
+            //Alertを表示
+            present(alert, animated: true, completion: nil)
+            
+            
         }
     }
     
-   
+    
     //segueでRecoderControllerに遷移
     func changeView() {
         self.performSegue(withIdentifier: "toRecoder2", sender: nil)

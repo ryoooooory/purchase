@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="46"/>
                                 <state key="normal" title="購入履歴"/>
                                 <connections>
-                                    <segue destination="q2v-Ty-Imh" kind="show" identifier="toRecoder" id="0bN-oU-y5e"/>
+                                    <segue destination="8Gs-7P-xbP" kind="showDetail" id="ABt-UA-xFG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商会アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-53-7YW">
@@ -90,6 +90,43 @@
             </objects>
             <point key="canvasLocation" x="728.79999999999995" y="814.54272863568224"/>
         </scene>
+        <!--Listview Controller-->
+        <scene sceneID="QlW-ZD-4XI">
+            <objects>
+                <tableViewController id="8Gs-7P-xbP" customClass="ListviewController" customModule="purchase" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IJu-pb-lEg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="GqQ-gB-g2m" style="IBUITableViewCellStyleDefault" id="qYT-wX-Iro">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qYT-wX-Iro" id="xDE-YR-znT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GqQ-gB-g2m">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8Gs-7P-xbP" id="5O7-Xa-GA8"/>
+                            <outlet property="delegate" destination="8Gs-7P-xbP" id="hnW-Vj-kHz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85t-Mc-GUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="1193"/>
+        </scene>
         <!--Camera Controller-->
         <scene sceneID="uAi-Dn-EcX">
             <objects>
@@ -109,7 +146,4 @@
             <point key="canvasLocation" x="-666" y="850"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="C1d-jS-Ivd"/>
-    </inferredMetricsTieBreakers>
 </document>

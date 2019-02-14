@@ -48,6 +48,10 @@ class RecoderController: UIViewController {
                 let updata = ["note": self.count]       //更新用データを作る
                 self.ref.child("user").updateChildValues(updata)        //元あった位置に格納
                 
+                let test = ["enpitu": 3]
+                self.ref.child("user").updateChildValues(test)        //元あった位置に格納
+
+                
                 self.label.text = ("ノート \(self.count)冊購入")             //更新したものを表示
                 
             })
@@ -73,6 +77,6 @@ class RecoderController: UIViewController {
     
     
     
-
-
+    
+    
 }
