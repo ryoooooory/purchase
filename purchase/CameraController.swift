@@ -146,17 +146,32 @@ class CameraController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     
     //segueでRecoderControllerに遷移
+//    func changeView() {
+//        self.performSegue(withIdentifier: "toRecoder2", sender: nil)
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "toRecoder2") {
+//            let vc2: RecoderController = (segue.destination as? RecoderController)!
+//            // ViewControllerのtextVC2にメッセージを設定
+//            vc2.bb = barcode                    //取得したbarcodeを渡す
+//        }
+//    }
+    
+    //segueでRecoderControllerに遷移
     func changeView() {
-        self.performSegue(withIdentifier: "toRecoder2", sender: nil)
+        self.performSegue(withIdentifier: "toListviewController", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toRecoder2") {
-            let vc2: RecoderController = (segue.destination as? RecoderController)!
+        if (segue.identifier == "toListviewController") {
+            let vc2: ListviewController = (segue.destination as? ListviewController)!
             // ViewControllerのtextVC2にメッセージを設定
-            vc2.bb = barcode                    //取得したbarcodeを渡す
+            vc2.barcode = barcode                    //取得したbarcodeを渡す
+            print(barcode)
         }
     }
+    
     
     
     

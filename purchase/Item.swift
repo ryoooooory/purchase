@@ -8,11 +8,18 @@
 import FirebaseDatabase
 import Foundation
 
-class Item{
+struct Item{
     var name = ""
-    var num = 0
+   // var num = 0
+    var price = 0
+    
     init(snapshot:DataSnapshot) {
+        
         self.name        = snapshot.childSnapshot(forPath: "name").value as! String
-        self.num      = snapshot.childSnapshot(forPath: "num").value as! Int
+        print(self.name)
+     //   self.num      =  snapshot.childSnapshot(forPath: "num").value as Any as! Int
+        self.price      =  snapshot.childSnapshot(forPath: "price").value as Any as! Int
+        //price *= self.num
     }
+
 }

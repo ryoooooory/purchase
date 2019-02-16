@@ -25,9 +25,7 @@ class RecoderController: UIViewController {
         
         ref = Database.database().reference()
         
-        // Do any additional setup after loading the view, typically from a nib.
-        //    add(item: Int(bb)!)
-        
+     
         if Int(bb) == 0{
             
             ref.child("user/note").observeSingleEvent(of: .value, with:{(snapshot) in self.count = Int((snapshot.value! as AnyObject).description)!                //noteの値の取得
@@ -40,7 +38,7 @@ class RecoderController: UIViewController {
         }else{
             
             
-            ref.child("user/note").observeSingleEvent(of: .value, with:{(snapshot) in self.count = Int((snapshot.value! as AnyObject).description)!                //noteの値の取得
+            ref.child("user/data").observeSingleEvent(of: .value, with:{(snapshot) in self.count = Int((snapshot.value! as AnyObject).description)!                //noteの値の取得
                 
                 //
                 self.count += 1                         //+1

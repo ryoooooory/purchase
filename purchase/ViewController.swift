@@ -10,15 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var unko = 11
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //ssrdr
-        
+      
         
         
         // Do any additional setup after loading the view, typically from a nib.
