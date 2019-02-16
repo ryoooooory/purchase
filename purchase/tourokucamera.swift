@@ -8,12 +8,14 @@
 
 import UIKit
 import AVFoundation             //クラスの集合体
+import Firebase
 
 
 class tourokucamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var label: UILabel!
-    
+    var ref: DatabaseReference!
+
     var barcode = ""                        //読み取ったコードの値を代入
     let session = AVCaptureSession()
     var camera:AVCaptureDevice!
@@ -21,7 +23,7 @@ class tourokucamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var cameraDevices: AVCaptureDevice!           //デバイス
     var imageOutput: AVCaptureStillImageOutput!           //画像のアウトプット
     
-    
+    var flag = false
     
     
     
@@ -116,43 +118,66 @@ class tourokucamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             
             
             //ダイアログ表示
-            let alert: UIAlertController = UIAlertController(title: "ノート", message: "購入しますか？", preferredStyle:  UIAlertController.Style.alert)
+            let alert: UIAlertController = UIAlertController(title: "ノート", message: "すでに登録された商品です", preferredStyle:  UIAlertController.Style.alert)
             // OKボタン
             let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
                 // ボタンが押された時の処理を書く（クロージャ実装）
                 (action: UIAlertAction!) -> Void in
                 print("Yes")
                 
-                //RecoderControllerに遷移
-                self.changeView()
-            })
-            // キャンセルボタン
-            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
-                // ボタンが押された時の処理を書く（クロージャ実装）
-                (action: UIAlertAction!) -> Void in
-                print("No")
             })
             // UIAlertControllerにActionを追加
-            alert.addAction(cancelAction)
             alert.addAction(defaultAction)
             
             //
-            //Alertを表示
-            present(alert, animated: true, completion: nil)
+           
+            print("oooooooo")
+//            finditem()
+            
+            if (flag){
+                //Alertを表示
+                present(alert, animated: true, completion: nil)
+                flag = false;
+            }
+            else{
+                //RecoderControllerに遷移
+                self.changeView()
+            }
             
             
         }
     }
-    
-    
+
+//    //登録済みバーコードがどうかの判定
+//    func finditem()-> Void{
+//        print("findstart")
+//        let dataRef = ref.child("data")
+//        if(dataRef.queryEqual(toValue: barcode)){
+//            return true;
+//        }
+        
+        
+        
+//        ref = Database.database().reference()
+//        ref.child("data/\(barcode)").observeSingleEvent(of: DataEventType.value, with: {(snapshot) in
+////            for data in snapshot.children{
+//                self.flag = true;
+//                print("data")
+//
+////            }
+//        })
+//        print("find")
+       // return false;
+//    }
+
     //segueでRecoderControllerに遷移
     func changeView() {
-        self.performSegue(withIdentifier: "toRecoder2", sender: nil)
+        self.performSegue(withIdentifier: "toSetting", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toRecoder2") {
-            let vc2: RecoderController = (segue.destination as? RecoderController)!
+        if (segue.identifier == "toSetting") {
+            let vc2: Settingitems = (segue.destination as? Settingitems)!
             // ViewControllerのtextVC2にメッセージを設定
             vc2.bb = barcode                    //取得したbarcodeを渡す
         }
