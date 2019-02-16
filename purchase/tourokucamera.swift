@@ -23,7 +23,7 @@ class tourokucamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var cameraDevices: AVCaptureDevice!           //デバイス
     var imageOutput: AVCaptureStillImageOutput!           //画像のアウトプット
     
-    
+    var flag = false
     
     
     
@@ -130,9 +130,14 @@ class tourokucamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             alert.addAction(defaultAction)
             
             //
-            if (finditem()){
+           
+            print("oooooooo")
+//            finditem()
+            
+            if (flag){
                 //Alertを表示
                 present(alert, animated: true, completion: nil)
+                flag = false;
             }
             else{
                 //RecoderControllerに遷移
@@ -143,25 +148,35 @@ class tourokucamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 
-    //登録済みバーコードがどうかの判定
-    func finditem()-> Bool{
-        print("findstart")
-        var find = true;
-        ref = Database.database().reference()
-        ref.child("data/\(barcode)").observeSingleEvent(of: DataEventType.value, with: {(snapshot)  in
-            find = snapshot.hasChild(self.barcode);
-        });
-        return find;
+//    //登録済みバーコードがどうかの判定
+//    func finditem()-> Void{
+//        print("findstart")
+//        let dataRef = ref.child("data")
+//        if(dataRef.queryEqual(toValue: barcode)){
+//            return true;
+//        }
         
-    }
+        
+        
+//        ref = Database.database().reference()
+//        ref.child("data/\(barcode)").observeSingleEvent(of: DataEventType.value, with: {(snapshot) in
+////            for data in snapshot.children{
+//                self.flag = true;
+//                print("data")
+//
+////            }
+//        })
+//        print("find")
+       // return false;
+//    }
 
     //segueでRecoderControllerに遷移
     func changeView() {
-        self.performSegue(withIdentifier: "toRegister", sender: nil)
+        self.performSegue(withIdentifier: "toSetting", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toRegister") {
+        if (segue.identifier == "toSetting") {
             let vc2: Settingitems = (segue.destination as? Settingitems)!
             // ViewControllerのtextVC2にメッセージを設定
             vc2.bb = barcode                    //取得したbarcodeを渡す

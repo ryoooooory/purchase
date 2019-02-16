@@ -11,13 +11,12 @@ import UIKit
 import Firebase
 
 
-class Settingitems: UIViewController {
+class Settingitems: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var label: UILabel!
     var ref: DatabaseReference!
     var bb = "0"                    //バーコードから読み取ったデータ
     var count = 0                   //インクリメント用
-    
     
     @IBOutlet weak var BarcodeNum: UILabel!
     
@@ -28,46 +27,54 @@ class Settingitems: UIViewController {
     @IBOutlet weak var Price: UITextField!
     
     
-    override func viewDidLoad() {
+    @IBAction func tapScreen(sender: UITapGestureRecognizer){
+        self.view.endEditing(true)
         
-        super.viewDidLoad()
-        print("Register")
-        
-        ref = Database.database().reference()
-        
-            ref.child("user/data").observeSingleEvent(of: .value, with:{(snapshot) in self.count = Int((snapshot.value! as AnyObject).description)!                //noteの値の取得
-                
-                //
-                self.count += 1                         //+1
-                print (self.count)                      //確認
-                let updata = ["note": self.count]       //更新用データを作る
-                self.ref.child("user").updateChildValues(updata)        //元あった位置に格納
-                
-                let test = ["enpitu": 3]
-                self.ref.child("user").updateChildValues(test)        //元あった位置に格納
-                
-                
-                self.label.text = ("ノート \(self.count)冊購入")             //更新したものを表示
-                
-            })
     }
     
     
-    //
-    //    //現在の購入履歴の表示
-    //    func show(){
-    //
-    //        ref = Database.database().reference()
-    //
-    //        //homeから呼ばれた時
-    //
-    //        ref.child("user/note").observeSingleEvent(of: .value, with:{(snapshot) in self.count = Int((snapshot.value! as AnyObject).description)!                //noteの値の取得
-    //
-    //            self.label.text = ("ノート \(self.count)冊購入")          //表示
-    //
-    //        })
-    //
-    //
+    
+    
+    @IBAction func newRegister(_ sender: Any) {
+         ref = Database.database().reference()
+//        ref.child("data/\(bb)").observeSingleEvent(of: .value, with:{(snapshot) in self.count = Int((snapshot.value! as AnyObject).description)!                //noteの値の取得
+//
+//            //
+            let updata = ["name": self.ItemName.text!]       //更新用データを作る
+            self.ref.child("data/\(self.bb)").updateChildValues(updata)        //元あった位置に格納
+            
+            let test = ["price": Int(self.Price.text!)]
+            self.ref.child("data/\(self.bb)").updateChildValues(test)        //元あった位置に格納
+            
+            
+//        })
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        print("setting")
+        self.ItemName.delegate = self
+        self.Price.delegate = self
+
+        
+        self.BarcodeNum.text = bb
+        self.Price.keyboardType = UIKeyboardType.numberPad
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     
